@@ -38,11 +38,11 @@
             this.add_prepodavatel_btn = new System.Windows.Forms.Button();
             this.kurs = new System.Windows.Forms.TabPage();
             this.table_data_kurs = new System.Windows.Forms.DataGridView();
-            this.update_kurs = new System.Windows.Forms.Button();
+            this.update_kurs_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.delete_kurs = new System.Windows.Forms.Button();
-            this.edit_kurs = new System.Windows.Forms.Button();
-            this.add_kurs = new System.Windows.Forms.Button();
+            this.delete_kurs_btn = new System.Windows.Forms.Button();
+            this.edit_kurs_btn = new System.Windows.Forms.Button();
+            this.add_kurs_btn = new System.Windows.Forms.Button();
             this.Student = new System.Windows.Forms.TabPage();
             this.grup_filter = new System.Windows.Forms.ComboBox();
             this.update_student = new System.Windows.Forms.Button();
@@ -137,6 +137,7 @@
             this.delete_prepodavatel_btn.TabIndex = 2;
             this.delete_prepodavatel_btn.Text = "Удалить";
             this.delete_prepodavatel_btn.UseVisualStyleBackColor = true;
+            this.delete_prepodavatel_btn.Click += new System.EventHandler(this.delete_prepodavatel_btn_Click);
             // 
             // edit_prepodavatel_btn
             // 
@@ -164,7 +165,7 @@
             // 
             this.kurs.BackColor = System.Drawing.Color.Silver;
             this.kurs.Controls.Add(this.table_data_kurs);
-            this.kurs.Controls.Add(this.update_kurs);
+            this.kurs.Controls.Add(this.update_kurs_btn);
             this.kurs.Controls.Add(this.groupBox1);
             this.kurs.Location = new System.Drawing.Point(4, 4);
             this.kurs.Name = "kurs";
@@ -185,21 +186,21 @@
             this.table_data_kurs.Size = new System.Drawing.Size(667, 412);
             this.table_data_kurs.TabIndex = 5;
             // 
-            // update_kurs
+            // update_kurs_btn
             // 
-            this.update_kurs.Location = new System.Drawing.Point(12, 126);
-            this.update_kurs.Name = "update_kurs";
-            this.update_kurs.Size = new System.Drawing.Size(92, 23);
-            this.update_kurs.TabIndex = 4;
-            this.update_kurs.Text = "Обновить";
-            this.update_kurs.UseVisualStyleBackColor = true;
-            this.update_kurs.Click += new System.EventHandler(this.update_kurs_Click);
+            this.update_kurs_btn.Location = new System.Drawing.Point(12, 126);
+            this.update_kurs_btn.Name = "update_kurs_btn";
+            this.update_kurs_btn.Size = new System.Drawing.Size(92, 23);
+            this.update_kurs_btn.TabIndex = 4;
+            this.update_kurs_btn.Text = "Обновить";
+            this.update_kurs_btn.UseVisualStyleBackColor = true;
+            this.update_kurs_btn.Click += new System.EventHandler(this.update_kurs_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.delete_kurs);
-            this.groupBox1.Controls.Add(this.edit_kurs);
-            this.groupBox1.Controls.Add(this.add_kurs);
+            this.groupBox1.Controls.Add(this.delete_kurs_btn);
+            this.groupBox1.Controls.Add(this.edit_kurs_btn);
+            this.groupBox1.Controls.Add(this.add_kurs_btn);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -208,35 +209,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление";
             // 
-            // delete_kurs
+            // delete_kurs_btn
             // 
-            this.delete_kurs.Location = new System.Drawing.Point(6, 80);
-            this.delete_kurs.Name = "delete_kurs";
-            this.delete_kurs.Size = new System.Drawing.Size(92, 23);
-            this.delete_kurs.TabIndex = 2;
-            this.delete_kurs.Text = "Удалить";
-            this.delete_kurs.UseVisualStyleBackColor = true;
+            this.delete_kurs_btn.Location = new System.Drawing.Point(6, 80);
+            this.delete_kurs_btn.Name = "delete_kurs_btn";
+            this.delete_kurs_btn.Size = new System.Drawing.Size(92, 23);
+            this.delete_kurs_btn.TabIndex = 2;
+            this.delete_kurs_btn.Text = "Удалить";
+            this.delete_kurs_btn.UseVisualStyleBackColor = true;
             // 
-            // edit_kurs
+            // edit_kurs_btn
             // 
-            this.edit_kurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.edit_kurs.Location = new System.Drawing.Point(6, 51);
-            this.edit_kurs.Name = "edit_kurs";
-            this.edit_kurs.Size = new System.Drawing.Size(92, 23);
-            this.edit_kurs.TabIndex = 1;
-            this.edit_kurs.Text = "Изменить";
-            this.edit_kurs.UseVisualStyleBackColor = true;
-            this.edit_kurs.Click += new System.EventHandler(this.button1_Click);
+            this.edit_kurs_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edit_kurs_btn.Location = new System.Drawing.Point(6, 51);
+            this.edit_kurs_btn.Name = "edit_kurs_btn";
+            this.edit_kurs_btn.Size = new System.Drawing.Size(92, 23);
+            this.edit_kurs_btn.TabIndex = 1;
+            this.edit_kurs_btn.Text = "Изменить";
+            this.edit_kurs_btn.UseVisualStyleBackColor = true;
+            this.edit_kurs_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // add_kurs
+            // add_kurs_btn
             // 
-            this.add_kurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add_kurs.Location = new System.Drawing.Point(6, 22);
-            this.add_kurs.Name = "add_kurs";
-            this.add_kurs.Size = new System.Drawing.Size(92, 23);
-            this.add_kurs.TabIndex = 0;
-            this.add_kurs.Text = "Добавить";
-            this.add_kurs.UseVisualStyleBackColor = true;
+            this.add_kurs_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_kurs_btn.Location = new System.Drawing.Point(6, 22);
+            this.add_kurs_btn.Name = "add_kurs_btn";
+            this.add_kurs_btn.Size = new System.Drawing.Size(92, 23);
+            this.add_kurs_btn.TabIndex = 0;
+            this.add_kurs_btn.Text = "Добавить";
+            this.add_kurs_btn.UseVisualStyleBackColor = true;
+            this.add_kurs_btn.Click += new System.EventHandler(this.add_kurs_btn_Click);
             // 
             // Student
             // 
@@ -360,9 +362,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage Student;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button delete_kurs;
-        private System.Windows.Forms.Button edit_kurs;
-        private System.Windows.Forms.Button add_kurs;
+        private System.Windows.Forms.Button delete_kurs_btn;
+        private System.Windows.Forms.Button edit_kurs_btn;
+        private System.Windows.Forms.Button add_kurs_btn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button delete_prepodavatel_btn;
         private System.Windows.Forms.Button edit_prepodavatel_btn;
@@ -374,7 +376,7 @@
         private System.Windows.Forms.Button add_student;
         private System.Windows.Forms.Button update_prepodavatel;
         private System.Windows.Forms.DataGridView table_data_kurs;
-        private System.Windows.Forms.Button update_kurs;
+        private System.Windows.Forms.Button update_kurs_btn;
         private System.Windows.Forms.Button update_student;
         private System.Windows.Forms.DataGridView table_student;
         private System.Windows.Forms.ComboBox grup_filter;

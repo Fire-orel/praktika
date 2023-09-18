@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_kurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_kurs.Designer.cs">
+      <DependentUpon>add_kurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="add_prepodavatel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="add_kurs.resx">
+      <DependentUpon>add_kurs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="add_prepodavatel.resx">
       <DependentUpon>add_prepodavatel.cs</DependentUpon>
     </EmbeddedResource>

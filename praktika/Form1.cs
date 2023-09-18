@@ -157,5 +157,33 @@ namespace praktika
                 update_prepodavatel_Click(sender, e);
             }
         }
+
+        private void delete_prepodavatel_btn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(table_prepodavatel.CurrentRow.Cells[0].Value.ToString());
+            SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
+            con.Open();
+            var res = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM prepodavatel WHERE ID_prepodavatel =" + id;
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                update_prepodavatel_Click(sender, e);
+            }
+            con.Close();
+        }
+
+        private void add_kurs_btn_Click(object sender, EventArgs e)
+        {
+            add_kurs windows = new add_kurs();
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_kurs_Click(sender, e);
+            }
+        }
     }
 }

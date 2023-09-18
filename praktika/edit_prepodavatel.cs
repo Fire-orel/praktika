@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,13 +21,15 @@ namespace praktika
             id = id_con;
             SQLiteConnection con=new SQLiteConnection(@"data source=../../../praktika_BD.db");
             con.Open();
-            string sql = "SELECT * FROM prepodavatel WHERE ID_prepodavatel=" + id;
+            string sql = "SELECT Familia,Name,Otchestvo FROM prepodavatel WHERE ID_prepodavatel=" + id;
             SQLiteCommand cmd = new SQLiteCommand(sql,con);
             using(SQLiteDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    reader.GetString
+                    edit_familia.Text = reader.GetString(0);
+                    edit_name.Text = reader.GetString(1);
+                    edit_otchestvo.Text = reader.GetString(2);
                 }
             }
         }
@@ -37,7 +38,7 @@ namespace praktika
         {
             SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
             con.Open();
-            string sql = "UPDATE prepodavatel SET Familia='" + edit_familia.Text + "',Name='" + edit_name.Text + "',quantity='" + edit_otchestvo.Text + "' WHERE ID_prepodavatel=" + id;
+            string sql = "UPDATE prepodavatel SET Familia='" + edit_familia.Text + "',Name='" + edit_name.Text + "',Otchestvo='" + edit_otchestvo.Text + "' WHERE ID_prepodavatel=" + id;
 
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
