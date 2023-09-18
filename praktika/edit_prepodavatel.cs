@@ -28,7 +28,7 @@ namespace praktika
             {
                 while (reader.Read())
                 {
-                    
+                    reader.GetString
                 }
             }
         }
