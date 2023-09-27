@@ -85,7 +85,7 @@
             this.Controls.Add(this.name_grup);
             this.Controls.Add(this.label1);
             this.Name = "edit_grup";
-            this.Text = "edit_grup";
+            this.Text = "Изменения группы";
             this.Load += new System.EventHandler(this.edit_grup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
