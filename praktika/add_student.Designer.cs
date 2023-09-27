@@ -152,7 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.add_familia_student);
             this.Name = "add_student";
-            this.Text = "add_student";
+            this.Text = "Добавления студента";
             this.Load += new System.EventHandler(this.add_student_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

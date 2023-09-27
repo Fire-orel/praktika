@@ -107,7 +107,7 @@
             this.Controls.Add(this.edit_name_kurs);
             this.Controls.Add(this.label1);
             this.Name = "edit_kurs";
-            this.Text = "edit_kurs";
+            this.Text = "Измения курса";
             this.Load += new System.EventHandler(this.edit_kurs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

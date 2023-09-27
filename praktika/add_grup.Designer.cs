@@ -85,7 +85,7 @@
             this.Controls.Add(this.name_grup);
             this.Controls.Add(this.label1);
             this.Name = "add_grup";
-            this.Text = "add_grup";
+            this.Text = "Добавления группы";
             this.ResumeLayout(false);
             this.PerformLayout();
 

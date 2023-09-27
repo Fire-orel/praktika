@@ -133,7 +133,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "edit_kurs_completed";
-            this.Text = "edit_kurs_completed";
+            this.Text = "изменения";
             this.Load += new System.EventHandler(this.edit_kurs_completed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ocenka)).EndInit();
             this.ResumeLayout(false);

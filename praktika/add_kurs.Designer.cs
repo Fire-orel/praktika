@@ -108,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "add_kurs";
-            this.Text = "add_kurs";
+            this.Text = "Добавления курса";
             this.Load += new System.EventHandler(this.add_kurs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

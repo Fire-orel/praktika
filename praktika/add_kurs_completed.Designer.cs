@@ -137,7 +137,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "add_kurs_completed";
-            this.Text = "add_kurs_completed";
+            this.Text = "Добавления";
             this.Load += new System.EventHandler(this.add_kurs_completed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ocenka)).EndInit();
             this.ResumeLayout(false);
