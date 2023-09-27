@@ -77,6 +77,12 @@
     <Compile Include="add_kurs.Designer.cs">
       <DependentUpon>add_kurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="add_kurs_completed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_kurs_completed.Designer.cs">
+      <DependentUpon>add_kurs_completed.cs</DependentUpon>
+    </Compile>
     <Compile Include="add_prepodavatel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="edit_kurs.Designer.cs">
       <DependentUpon>edit_kurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="edit_kurs_completed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_kurs_completed.Designer.cs">
+      <DependentUpon>edit_kurs_completed.cs</DependentUpon>
+    </Compile>
     <Compile Include="edit_prepodavatel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="add_grup.resx">
@@ -126,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="add_kurs.resx">
       <DependentUpon>add_kurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_kurs_completed.resx">
+      <DependentUpon>add_kurs_completed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="add_prepodavatel.resx">
       <DependentUpon>add_prepodavatel.cs</DependentUpon>
@@ -139,6 +160,9 @@
     <EmbeddedResource Include="edit_kurs.resx">
       <DependentUpon>edit_kurs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="edit_kurs_completed.resx">
+      <DependentUpon>edit_kurs_completed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="edit_prepodavatel.resx">
       <DependentUpon>edit_prepodavatel.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

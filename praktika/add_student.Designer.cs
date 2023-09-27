@@ -122,6 +122,7 @@
             this.exit_btn_grup.TabIndex = 24;
             this.exit_btn_grup.Text = "Отменить";
             this.exit_btn_grup.UseVisualStyleBackColor = true;
+            this.exit_btn_grup.Click += new System.EventHandler(this.exit_btn_grup_Click);
             // 
             // save_btn_grup
             // 
@@ -132,6 +133,7 @@
             this.save_btn_grup.TabIndex = 23;
             this.save_btn_grup.Text = "Сохранить";
             this.save_btn_grup.UseVisualStyleBackColor = true;
+            this.save_btn_grup.Click += new System.EventHandler(this.save_btn_grup_Click);
             // 
             // add_student
             // 

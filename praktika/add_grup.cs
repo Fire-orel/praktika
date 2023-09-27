@@ -15,15 +15,10 @@ namespace praktika
     {
         public add_grup()
         {
-           
+            InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void exit_btn_grup_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -32,12 +27,10 @@ namespace praktika
         {
             SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
             con.Open();
-            string sql = "INSERT INTO grupa (Name_grup)  VALUES ('" + name_grup.Text + "')";
-
+            string sql = "INSERT INTO grupa (Name_grup) VALUES ('" + name_grup.Text + "')";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
-
             this.DialogResult = DialogResult.OK;
             con.Close();
             this.Close();

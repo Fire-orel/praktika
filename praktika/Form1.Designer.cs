@@ -58,7 +58,26 @@
             this.delete_student = new System.Windows.Forms.Button();
             this.edit_student = new System.Windows.Forms.Button();
             this.add_student = new System.Windows.Forms.Button();
+            this.kurc_completed = new System.Windows.Forms.TabPage();
+            this.fillter_kurs_completed = new System.Windows.Forms.ComboBox();
+            this.fillter_categorie_kurs_completed = new System.Windows.Forms.ComboBox();
+            this.update_kurs_completed = new System.Windows.Forms.Button();
+            this.kurs_completed_table = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.delete_kurs_completed = new System.Windows.Forms.Button();
+            this.edit_kurs_completed = new System.Windows.Forms.Button();
+            this.add_kurs_complited_btn = new System.Windows.Forms.Button();
+            this.otchet = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.otchet_table = new System.Windows.Forms.DataGridView();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.check_grup = new System.Windows.Forms.CheckBox();
+            this.check_ocenki = new System.Windows.Forms.CheckBox();
+            this.check_kurs = new System.Windows.Forms.CheckBox();
+            this.grup_check_cmb = new System.Windows.Forms.ComboBox();
+            this.kurs_check_cmb = new System.Windows.Forms.ComboBox();
+            this.ocenki_check_cmb = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tab_kurs.SuspendLayout();
             this.Prepodavatel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_prepodavatel)).BeginInit();
@@ -72,6 +91,12 @@
             this.Student.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_student)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.kurc_completed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kurs_completed_table)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.otchet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.otchet_table)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_kurs
@@ -84,6 +109,8 @@
             this.tab_kurs.Controls.Add(this.kurs);
             this.tab_kurs.Controls.Add(this.grupa);
             this.tab_kurs.Controls.Add(this.Student);
+            this.tab_kurs.Controls.Add(this.kurc_completed);
+            this.tab_kurs.Controls.Add(this.otchet);
             this.tab_kurs.Location = new System.Drawing.Point(2, 1);
             this.tab_kurs.Multiline = true;
             this.tab_kurs.Name = "tab_kurs";
@@ -94,7 +121,7 @@
             // 
             // Prepodavatel
             // 
-            this.Prepodavatel.BackColor = System.Drawing.Color.Silver;
+            this.Prepodavatel.BackColor = System.Drawing.Color.SteelBlue;
             this.Prepodavatel.Controls.Add(this.update_prepodavatel);
             this.Prepodavatel.Controls.Add(this.table_prepodavatel);
             this.Prepodavatel.Controls.Add(this.groupBox2);
@@ -174,7 +201,7 @@
             // 
             // kurs
             // 
-            this.kurs.BackColor = System.Drawing.Color.Silver;
+            this.kurs.BackColor = System.Drawing.Color.SteelBlue;
             this.kurs.Controls.Add(this.table_data_kurs);
             this.kurs.Controls.Add(this.update_kurs_btn);
             this.kurs.Controls.Add(this.groupBox1);
@@ -254,7 +281,7 @@
             // 
             // grupa
             // 
-            this.grupa.BackColor = System.Drawing.Color.DarkGray;
+            this.grupa.BackColor = System.Drawing.Color.SteelBlue;
             this.grupa.Controls.Add(this.update_grup_btn);
             this.grupa.Controls.Add(this.grupa_table_data);
             this.grupa.Controls.Add(this.groupBox4);
@@ -288,6 +315,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.SteelBlue;
             this.groupBox4.Controls.Add(this.delete_grup_btn);
             this.groupBox4.Controls.Add(this.edit_grup_btn);
             this.groupBox4.Controls.Add(this.add_grup_btn);
@@ -333,7 +361,7 @@
             // 
             // Student
             // 
-            this.Student.BackColor = System.Drawing.Color.Silver;
+            this.Student.BackColor = System.Drawing.Color.SteelBlue;
             this.Student.Controls.Add(this.grup_filter);
             this.Student.Controls.Add(this.update_student);
             this.Student.Controls.Add(this.table_student);
@@ -423,6 +451,226 @@
             this.add_student.UseVisualStyleBackColor = true;
             this.add_student.Click += new System.EventHandler(this.add_student_Click);
             // 
+            // kurc_completed
+            // 
+            this.kurc_completed.BackColor = System.Drawing.Color.SteelBlue;
+            this.kurc_completed.Controls.Add(this.fillter_kurs_completed);
+            this.kurc_completed.Controls.Add(this.fillter_categorie_kurs_completed);
+            this.kurc_completed.Controls.Add(this.update_kurs_completed);
+            this.kurc_completed.Controls.Add(this.kurs_completed_table);
+            this.kurc_completed.Controls.Add(this.groupBox5);
+            this.kurc_completed.Location = new System.Drawing.Point(4, 4);
+            this.kurc_completed.Name = "kurc_completed";
+            this.kurc_completed.Size = new System.Drawing.Size(789, 421);
+            this.kurc_completed.TabIndex = 5;
+            this.kurc_completed.Text = "Пройденые курсы";
+            // 
+            // fillter_kurs_completed
+            // 
+            this.fillter_kurs_completed.FormattingEnabled = true;
+            this.fillter_kurs_completed.Location = new System.Drawing.Point(7, 183);
+            this.fillter_kurs_completed.Name = "fillter_kurs_completed";
+            this.fillter_kurs_completed.Size = new System.Drawing.Size(103, 21);
+            this.fillter_kurs_completed.TabIndex = 11;
+            this.fillter_kurs_completed.SelectedIndexChanged += new System.EventHandler(this.fillter_kurs_completed_SelectedIndexChanged);
+            // 
+            // fillter_categorie_kurs_completed
+            // 
+            this.fillter_categorie_kurs_completed.DisplayMember = "0";
+            this.fillter_categorie_kurs_completed.FormattingEnabled = true;
+            this.fillter_categorie_kurs_completed.Items.AddRange(new object[] {
+            "По курсам",
+            "По группам"});
+            this.fillter_categorie_kurs_completed.Location = new System.Drawing.Point(7, 156);
+            this.fillter_categorie_kurs_completed.Name = "fillter_categorie_kurs_completed";
+            this.fillter_categorie_kurs_completed.Size = new System.Drawing.Size(103, 21);
+            this.fillter_categorie_kurs_completed.TabIndex = 10;
+            this.fillter_categorie_kurs_completed.ValueMember = "0";
+            this.fillter_categorie_kurs_completed.SelectedIndexChanged += new System.EventHandler(this.fillter_categorie_kurs_completed_SelectedIndexChanged);
+            // 
+            // update_kurs_completed
+            // 
+            this.update_kurs_completed.Location = new System.Drawing.Point(13, 127);
+            this.update_kurs_completed.Name = "update_kurs_completed";
+            this.update_kurs_completed.Size = new System.Drawing.Size(92, 23);
+            this.update_kurs_completed.TabIndex = 9;
+            this.update_kurs_completed.Text = "Обновить";
+            this.update_kurs_completed.UseVisualStyleBackColor = true;
+            this.update_kurs_completed.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // kurs_completed_table
+            // 
+            this.kurs_completed_table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kurs_completed_table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.kurs_completed_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kurs_completed_table.Location = new System.Drawing.Point(116, 4);
+            this.kurs_completed_table.Name = "kurs_completed_table";
+            this.kurs_completed_table.Size = new System.Drawing.Size(667, 412);
+            this.kurs_completed_table.TabIndex = 8;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.delete_kurs_completed);
+            this.groupBox5.Controls.Add(this.edit_kurs_completed);
+            this.groupBox5.Controls.Add(this.add_kurs_complited_btn);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox5.Location = new System.Drawing.Point(7, 7);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(104, 114);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Управление";
+            // 
+            // delete_kurs_completed
+            // 
+            this.delete_kurs_completed.Location = new System.Drawing.Point(6, 80);
+            this.delete_kurs_completed.Name = "delete_kurs_completed";
+            this.delete_kurs_completed.Size = new System.Drawing.Size(92, 23);
+            this.delete_kurs_completed.TabIndex = 2;
+            this.delete_kurs_completed.Text = "Удалить";
+            this.delete_kurs_completed.UseVisualStyleBackColor = true;
+            this.delete_kurs_completed.Click += new System.EventHandler(this.delete_kurs_completed_Click);
+            // 
+            // edit_kurs_completed
+            // 
+            this.edit_kurs_completed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edit_kurs_completed.Location = new System.Drawing.Point(6, 51);
+            this.edit_kurs_completed.Name = "edit_kurs_completed";
+            this.edit_kurs_completed.Size = new System.Drawing.Size(92, 23);
+            this.edit_kurs_completed.TabIndex = 1;
+            this.edit_kurs_completed.Text = "Изменить";
+            this.edit_kurs_completed.UseVisualStyleBackColor = true;
+            this.edit_kurs_completed.Click += new System.EventHandler(this.edit_kurs_completed_Click);
+            // 
+            // add_kurs_complited_btn
+            // 
+            this.add_kurs_complited_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_kurs_complited_btn.Location = new System.Drawing.Point(6, 22);
+            this.add_kurs_complited_btn.Name = "add_kurs_complited_btn";
+            this.add_kurs_complited_btn.Size = new System.Drawing.Size(92, 23);
+            this.add_kurs_complited_btn.TabIndex = 0;
+            this.add_kurs_complited_btn.Text = "Добавить";
+            this.add_kurs_complited_btn.UseVisualStyleBackColor = true;
+            this.add_kurs_complited_btn.Click += new System.EventHandler(this.add_kurs_complited_btn_Click);
+            // 
+            // otchet
+            // 
+            this.otchet.BackColor = System.Drawing.Color.SteelBlue;
+            this.otchet.Controls.Add(this.groupBox6);
+            this.otchet.Controls.Add(this.otchet_table);
+            this.otchet.Location = new System.Drawing.Point(4, 4);
+            this.otchet.Name = "otchet";
+            this.otchet.Size = new System.Drawing.Size(789, 421);
+            this.otchet.TabIndex = 4;
+            this.otchet.Text = "Отчёт";
+            // 
+            // otchet_table
+            // 
+            this.otchet_table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.otchet_table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.otchet_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.otchet_table.Location = new System.Drawing.Point(151, 3);
+            this.otchet_table.Name = "otchet_table";
+            this.otchet_table.Size = new System.Drawing.Size(635, 412);
+            this.otchet_table.TabIndex = 9;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.ocenki_check_cmb);
+            this.groupBox6.Controls.Add(this.kurs_check_cmb);
+            this.groupBox6.Controls.Add(this.grup_check_cmb);
+            this.groupBox6.Controls.Add(this.check_kurs);
+            this.groupBox6.Controls.Add(this.check_ocenki);
+            this.groupBox6.Controls.Add(this.check_grup);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox6.Location = new System.Drawing.Point(9, 7);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(136, 408);
+            this.groupBox6.TabIndex = 10;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Фильтры";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // check_grup
+            // 
+            this.check_grup.AutoSize = true;
+            this.check_grup.Location = new System.Drawing.Point(6, 20);
+            this.check_grup.Name = "check_grup";
+            this.check_grup.Size = new System.Drawing.Size(83, 19);
+            this.check_grup.TabIndex = 0;
+            this.check_grup.Text = "По группе";
+            this.check_grup.UseVisualStyleBackColor = true;
+            this.check_grup.CheckedChanged += new System.EventHandler(this.check_grup_CheckedChanged);
+            // 
+            // check_ocenki
+            // 
+            this.check_ocenki.AutoSize = true;
+            this.check_ocenki.Location = new System.Drawing.Point(6, 70);
+            this.check_ocenki.Name = "check_ocenki";
+            this.check_ocenki.Size = new System.Drawing.Size(95, 19);
+            this.check_ocenki.TabIndex = 1;
+            this.check_ocenki.Text = "По оценкам";
+            this.check_ocenki.UseVisualStyleBackColor = true;
+            this.check_ocenki.CheckedChanged += new System.EventHandler(this.check_ocenki_CheckedChanged);
+            // 
+            // check_kurs
+            // 
+            this.check_kurs.AutoSize = true;
+            this.check_kurs.Location = new System.Drawing.Point(6, 45);
+            this.check_kurs.Name = "check_kurs";
+            this.check_kurs.Size = new System.Drawing.Size(85, 19);
+            this.check_kurs.TabIndex = 2;
+            this.check_kurs.Text = "По курсам";
+            this.check_kurs.UseVisualStyleBackColor = true;
+            this.check_kurs.CheckedChanged += new System.EventHandler(this.check_kurs_CheckedChanged);
+            // 
+            // grup_check_cmb
+            // 
+            this.grup_check_cmb.FormattingEnabled = true;
+            this.grup_check_cmb.Location = new System.Drawing.Point(6, 95);
+            this.grup_check_cmb.Name = "grup_check_cmb";
+            this.grup_check_cmb.Size = new System.Drawing.Size(124, 23);
+            this.grup_check_cmb.TabIndex = 3;
+            this.grup_check_cmb.SelectedIndexChanged += new System.EventHandler(this.grup_check_cmb_SelectedIndexChanged);
+            // 
+            // kurs_check_cmb
+            // 
+            this.kurs_check_cmb.FormattingEnabled = true;
+            this.kurs_check_cmb.Location = new System.Drawing.Point(6, 124);
+            this.kurs_check_cmb.Name = "kurs_check_cmb";
+            this.kurs_check_cmb.Size = new System.Drawing.Size(124, 23);
+            this.kurs_check_cmb.TabIndex = 4;
+            // 
+            // ocenki_check_cmb
+            // 
+            this.ocenki_check_cmb.FormattingEnabled = true;
+            this.ocenki_check_cmb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.ocenki_check_cmb.Location = new System.Drawing.Point(6, 153);
+            this.ocenki_check_cmb.Name = "ocenki_check_cmb";
+            this.ocenki_check_cmb.Size = new System.Drawing.Size(124, 23);
+            this.ocenki_check_cmb.TabIndex = 5;
+            this.ocenki_check_cmb.SelectedIndexChanged += new System.EventHandler(this.ocenki_check_cmb_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Сформировать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // main_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +679,7 @@
             this.Controls.Add(this.tab_kurs);
             this.Name = "main_screen";
             this.Text = "АРМ Метадиста";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_screen_FormClosed);
             this.Load += new System.EventHandler(this.main_screen_Load);
             this.tab_kurs.ResumeLayout(false);
             this.Prepodavatel.ResumeLayout(false);
@@ -445,6 +694,13 @@
             this.Student.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_student)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.kurc_completed.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kurs_completed_table)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.otchet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.otchet_table)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -482,6 +738,25 @@
         private System.Windows.Forms.Button delete_grup_btn;
         private System.Windows.Forms.Button edit_grup_btn;
         private System.Windows.Forms.Button add_grup_btn;
+        private System.Windows.Forms.TabPage kurc_completed;
+        private System.Windows.Forms.TabPage otchet;
+        private System.Windows.Forms.Button update_kurs_completed;
+        private System.Windows.Forms.DataGridView kurs_completed_table;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button delete_kurs_completed;
+        private System.Windows.Forms.Button edit_kurs_completed;
+        private System.Windows.Forms.Button add_kurs_complited_btn;
+        private System.Windows.Forms.ComboBox fillter_categorie_kurs_completed;
+        private System.Windows.Forms.ComboBox fillter_kurs_completed;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox grup_check_cmb;
+        private System.Windows.Forms.CheckBox check_kurs;
+        private System.Windows.Forms.CheckBox check_ocenki;
+        private System.Windows.Forms.CheckBox check_grup;
+        private System.Windows.Forms.DataGridView otchet_table;
+        private System.Windows.Forms.ComboBox ocenki_check_cmb;
+        private System.Windows.Forms.ComboBox kurs_check_cmb;
+        private System.Windows.Forms.Button button1;
     }
 }
 
