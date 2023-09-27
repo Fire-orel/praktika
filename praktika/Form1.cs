@@ -19,13 +19,19 @@ namespace praktika
         public main_screen()
         {
             InitializeComponent();
-            grup_filter.SelectedIndex = 0;
+            
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(table_data_kurs.CurrentRow.Cells[0].Value.ToString());
+            edit_kurs windows = new edit_kurs(id);
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_kurs_Click(sender, e);
+            }
         }
 
         private void update_prepodavatel_Click(object sender, EventArgs e)
@@ -45,7 +51,7 @@ namespace praktika
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            update_student_Click(sender, e);
            
         }
 
@@ -64,12 +70,12 @@ namespace praktika
                 adapter.Fill(dt);
                 table_student.DataSource = dt;
                 con.Close();
-                Console.WriteLine(grup_filter.Text);
+                
             }
             else
             {
                 string znachenie= grup_filter.Text.ToString();
-                Console.WriteLine(znachenie);
+                
                 SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
                 con.Open();
                 string query = "SELECT student.ID_student [ID],student.Familia[Фамилия],student.Name[Имя],student.Otchestvo[Отчество],grupa.Name_grup[Название группы] FROM student INNER JOIN grupa ON grupa.ID_grup=student.ID_grup WHERE student.ID_grup=(SELECT ID_grup FROM grupa WHERE Name_grup=\""+znachenie+"\")";
@@ -81,7 +87,7 @@ namespace praktika
                 adapter.Fill(dt);
                 table_student.DataSource = dt;
                 con.Close();
-                Console.WriteLine(grup_filter.Text);
+                
             }
 
         }
@@ -97,6 +103,12 @@ namespace praktika
                     update_kurs_Click(sender, e);
                     break;
                 case ("2"):
+                    update_grup_btn_Click(sender, e);
+                    break;
+                case ("3"):
+                    grup_filter.Items.Clear();
+                    grup_filter.Items.Add("Все");
+                    grup_filter.SelectedIndex = 0;
                     update_student_Click (sender, e);
                     SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
                     con.Open();
@@ -184,6 +196,117 @@ namespace praktika
             {
                 update_kurs_Click(sender, e);
             }
+        }
+
+        private void delete_kurs_btn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(table_data_kurs.CurrentRow.Cells[0].Value.ToString());
+            SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
+            con.Open();
+            var res = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM kurs WHERE ID_kurs =" + id;
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                update_kurs_Click(sender, e);
+            }
+            con.Close();
+        }
+
+        private void update_grup_btn_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
+            con.Open();
+            string query = "SELECT ID_grup [ID группы], Name_grup[Название группы] FROM grupa  ";
+            SQLiteCommand cmd = new SQLiteCommand(query, con);
+
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
+
+            adapter.Fill(dt);
+            grupa_table_data.DataSource = dt;
+            con.Close();
+        }
+
+        private void add_grup_btn_Click(object sender, EventArgs e)
+        {
+            add_grup windows = new add_grup();
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_grup_btn_Click(sender, e);
+            }
+        }
+
+        private void edit_student_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(table_student.CurrentRow.Cells[0].Value.ToString());
+            edit_student windows = new edit_student(id);
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_student_Click(sender, e);
+            }
+        }
+
+        private void edit_grup_btn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(grupa_table_data.CurrentRow.Cells[0].Value.ToString());
+            edit_grup windows = new edit_grup(id);
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_grup_btn_Click(sender, e);
+            }
+        }
+
+        private void delete_grup_btn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(grupa_table_data.CurrentRow.Cells[0].Value.ToString());
+            SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
+            con.Open();
+            var res = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM prupa WHERE ID_grup =" + id;
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                update_grup_btn_Click(sender, e);
+            }
+            con.Close();
+        }
+
+        private void add_student_Click(object sender, EventArgs e)
+        {
+            add_student windows = new add_student();
+            DialogResult result = windows.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                update_student_Click(sender, e);
+            }
+        }
+
+        private void delete_student_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(table_student.CurrentRow.Cells[0].Value.ToString());
+            SQLiteConnection con = new SQLiteConnection(@"data source=../../../praktika_BD.db");
+            con.Open();
+            var res = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM student WHERE ID_student =" + id;
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                update_student_Click(sender, e);
+            }
+            con.Close();
         }
     }
 }

@@ -92,6 +92,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Отменить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // add_kurs
             // 
@@ -108,6 +109,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "add_kurs";
             this.Text = "add_kurs";
+            this.Load += new System.EventHandler(this.add_kurs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -43,6 +43,13 @@
             this.delete_kurs_btn = new System.Windows.Forms.Button();
             this.edit_kurs_btn = new System.Windows.Forms.Button();
             this.add_kurs_btn = new System.Windows.Forms.Button();
+            this.grupa = new System.Windows.Forms.TabPage();
+            this.update_grup_btn = new System.Windows.Forms.Button();
+            this.grupa_table_data = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.delete_grup_btn = new System.Windows.Forms.Button();
+            this.edit_grup_btn = new System.Windows.Forms.Button();
+            this.add_grup_btn = new System.Windows.Forms.Button();
             this.Student = new System.Windows.Forms.TabPage();
             this.grup_filter = new System.Windows.Forms.ComboBox();
             this.update_student = new System.Windows.Forms.Button();
@@ -59,6 +66,9 @@
             this.kurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_data_kurs)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.grupa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grupa_table_data)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.Student.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_student)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -72,6 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab_kurs.Controls.Add(this.Prepodavatel);
             this.tab_kurs.Controls.Add(this.kurs);
+            this.tab_kurs.Controls.Add(this.grupa);
             this.tab_kurs.Controls.Add(this.Student);
             this.tab_kurs.Location = new System.Drawing.Point(2, 1);
             this.tab_kurs.Multiline = true;
@@ -217,6 +228,7 @@
             this.delete_kurs_btn.TabIndex = 2;
             this.delete_kurs_btn.Text = "Удалить";
             this.delete_kurs_btn.UseVisualStyleBackColor = true;
+            this.delete_kurs_btn.Click += new System.EventHandler(this.delete_kurs_btn_Click);
             // 
             // edit_kurs_btn
             // 
@@ -240,6 +252,85 @@
             this.add_kurs_btn.UseVisualStyleBackColor = true;
             this.add_kurs_btn.Click += new System.EventHandler(this.add_kurs_btn_Click);
             // 
+            // grupa
+            // 
+            this.grupa.BackColor = System.Drawing.Color.DarkGray;
+            this.grupa.Controls.Add(this.update_grup_btn);
+            this.grupa.Controls.Add(this.grupa_table_data);
+            this.grupa.Controls.Add(this.groupBox4);
+            this.grupa.Location = new System.Drawing.Point(4, 4);
+            this.grupa.Name = "grupa";
+            this.grupa.Size = new System.Drawing.Size(789, 421);
+            this.grupa.TabIndex = 3;
+            this.grupa.Text = "Группы";
+            // 
+            // update_grup_btn
+            // 
+            this.update_grup_btn.Location = new System.Drawing.Point(13, 127);
+            this.update_grup_btn.Name = "update_grup_btn";
+            this.update_grup_btn.Size = new System.Drawing.Size(92, 23);
+            this.update_grup_btn.TabIndex = 9;
+            this.update_grup_btn.Text = "Обновить";
+            this.update_grup_btn.UseVisualStyleBackColor = true;
+            this.update_grup_btn.Click += new System.EventHandler(this.update_grup_btn_Click);
+            // 
+            // grupa_table_data
+            // 
+            this.grupa_table_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grupa_table_data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grupa_table_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grupa_table_data.Location = new System.Drawing.Point(116, 4);
+            this.grupa_table_data.Name = "grupa_table_data";
+            this.grupa_table_data.Size = new System.Drawing.Size(667, 412);
+            this.grupa_table_data.TabIndex = 8;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.delete_grup_btn);
+            this.groupBox4.Controls.Add(this.edit_grup_btn);
+            this.groupBox4.Controls.Add(this.add_grup_btn);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox4.Location = new System.Drawing.Point(7, 7);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(104, 114);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Управление";
+            // 
+            // delete_grup_btn
+            // 
+            this.delete_grup_btn.Location = new System.Drawing.Point(6, 80);
+            this.delete_grup_btn.Name = "delete_grup_btn";
+            this.delete_grup_btn.Size = new System.Drawing.Size(92, 23);
+            this.delete_grup_btn.TabIndex = 2;
+            this.delete_grup_btn.Text = "Удалить";
+            this.delete_grup_btn.UseVisualStyleBackColor = true;
+            this.delete_grup_btn.Click += new System.EventHandler(this.delete_grup_btn_Click);
+            // 
+            // edit_grup_btn
+            // 
+            this.edit_grup_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edit_grup_btn.Location = new System.Drawing.Point(6, 51);
+            this.edit_grup_btn.Name = "edit_grup_btn";
+            this.edit_grup_btn.Size = new System.Drawing.Size(92, 23);
+            this.edit_grup_btn.TabIndex = 1;
+            this.edit_grup_btn.Text = "Изменить";
+            this.edit_grup_btn.UseVisualStyleBackColor = true;
+            this.edit_grup_btn.Click += new System.EventHandler(this.edit_grup_btn_Click);
+            // 
+            // add_grup_btn
+            // 
+            this.add_grup_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_grup_btn.Location = new System.Drawing.Point(6, 22);
+            this.add_grup_btn.Name = "add_grup_btn";
+            this.add_grup_btn.Size = new System.Drawing.Size(92, 23);
+            this.add_grup_btn.TabIndex = 0;
+            this.add_grup_btn.Text = "Добавить";
+            this.add_grup_btn.UseVisualStyleBackColor = true;
+            this.add_grup_btn.Click += new System.EventHandler(this.add_grup_btn_Click);
+            // 
             // Student
             // 
             this.Student.BackColor = System.Drawing.Color.Silver;
@@ -257,8 +348,6 @@
             // 
             this.grup_filter.DisplayMember = "0";
             this.grup_filter.FormattingEnabled = true;
-            this.grup_filter.Items.AddRange(new object[] {
-            "Все"});
             this.grup_filter.Location = new System.Drawing.Point(5, 155);
             this.grup_filter.Name = "grup_filter";
             this.grup_filter.Size = new System.Drawing.Size(104, 21);
@@ -310,6 +399,7 @@
             this.delete_student.TabIndex = 2;
             this.delete_student.Text = "Удалить";
             this.delete_student.UseVisualStyleBackColor = true;
+            this.delete_student.Click += new System.EventHandler(this.delete_student_Click);
             // 
             // edit_student
             // 
@@ -320,6 +410,7 @@
             this.edit_student.TabIndex = 1;
             this.edit_student.Text = "Изменить";
             this.edit_student.UseVisualStyleBackColor = true;
+            this.edit_student.Click += new System.EventHandler(this.edit_student_Click);
             // 
             // add_student
             // 
@@ -330,6 +421,7 @@
             this.add_student.TabIndex = 0;
             this.add_student.Text = "Добавить";
             this.add_student.UseVisualStyleBackColor = true;
+            this.add_student.Click += new System.EventHandler(this.add_student_Click);
             // 
             // main_screen
             // 
@@ -347,6 +439,9 @@
             this.kurs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_data_kurs)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.grupa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grupa_table_data)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.Student.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_student)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -380,6 +475,13 @@
         private System.Windows.Forms.Button update_student;
         private System.Windows.Forms.DataGridView table_student;
         private System.Windows.Forms.ComboBox grup_filter;
+        private System.Windows.Forms.TabPage grupa;
+        private System.Windows.Forms.Button update_grup_btn;
+        private System.Windows.Forms.DataGridView grupa_table_data;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button delete_grup_btn;
+        private System.Windows.Forms.Button edit_grup_btn;
+        private System.Windows.Forms.Button add_grup_btn;
     }
 }
 
